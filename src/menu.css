@@ -24,6 +24,10 @@
     padding: 10px;
     border-radius: 5px;
 }
+/*for hover and click event*/
+.nav-item-active{
+    background-color: #363636;
+}
 .fa-circle{
     padding-right: 5px;
 }
