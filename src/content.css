@@ -13,6 +13,7 @@
     font-size: 18px;
     border-bottom: 1px solid #747474;
     padding: 10px 10px 10px 0;
+    cursor: pointer;
 }
 .task-item input{
     margin-right: 10px;

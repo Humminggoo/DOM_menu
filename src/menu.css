@@ -23,6 +23,7 @@
     color: #DDDDDD;
     padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
 }
 /*for hover and click event*/
 .nav-item-active{
