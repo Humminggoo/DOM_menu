@@ -12,6 +12,7 @@ let menuBtn = document.getElementById('menu-btn'),
     contentContainer = document.getElementById('content');
 //for the first load
 showContent(data.projects[0].name);
+menuItems[0].classList.add('nav-item-clicked', 'nav-item-active');
 
 //menu animation
 menuBtn.addEventListener("click", toggleMenu.bind(null, menu, 'menu-active'));
