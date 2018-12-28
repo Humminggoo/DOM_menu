@@ -1,6 +1,7 @@
 import  './css-reset.css';
 import './header.css';
 import  './menu.css';
+import  './content.css';
 import * as data from './task.json';
 const word = data.projects;
 console.log(word); // output 'testing'
@@ -59,10 +60,15 @@ function showContent(name) {
     let nameDiv = document.createElement('div');
     nameDiv.textContent = content.name;
     nameDiv.setAttribute('id', 'content-name');
+    nameDiv.classList.add('content-name');
     fragment.appendChild(nameDiv);
     for(let i = 0; i < content.tasks.length; i++){
         let task = document.createElement('div');
         task.textContent = content.tasks[i];
+        task.classList.add('task-item');
+        let checkbox = document.createElement('input');
+        checkbox.setAttribute('type', 'checkbox');
+        task.insertAdjacentElement('afterbegin', checkbox);
         fragment.appendChild(task);
     }
     contentContainer.appendChild(fragment);
