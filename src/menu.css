@@ -7,7 +7,7 @@
     padding-top: 24px;
     z-index: 10;
     left: -300px;
-    transition: left 2s;
+    transition: left .5s;
 }
 .menu-active{
     left: 0px;

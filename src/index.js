@@ -19,6 +19,8 @@ menu.addEventListener("mouseenter", highlightItem, true);
 menu.addEventListener("mouseleave", blurItem, true);
 
 function toggleMenu(menu, classname) {
+    menuBtn.getElementsByTagName('i').item(0).classList.toggle('fa-bars');
+    menuBtn.getElementsByTagName('i').item(0).classList.toggle('fa-times');
     menu.classList.toggle(classname);
 }
 function clickItem(e) {
