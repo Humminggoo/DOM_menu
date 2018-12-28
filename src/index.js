@@ -1,10 +1,16 @@
-import  './css-reset.css'
+import  './css-reset.css';
 import './header.css';
-import  './menu.css'
+import  './menu.css';
+import * as data from './task.json';
+const word = data.projects;
+console.log(word); // output 'testing'
 
 let menuBtn = document.getElementById('menu-btn'),
     menu = document.getElementById('menu'),
-    menuItems = document.getElementsByClassName('nav-item');
+    menuItems = document.getElementsByClassName('nav-item'),
+    contentContainer = document.getElementById('content');
+
+showContent(data.projects[0].name);
 
 menuBtn.addEventListener("click", toggleMenu.bind(null, menu, 'menu-active'));
 menu.addEventListener("click", clickItem, false);
@@ -23,6 +29,10 @@ function clickItem(e) {
             }
         );
         e.target.classList.add('nav-item-clicked', 'nav-item-active');
+        if(document.getElementById('content-name').textContent!==e.target.textContent) {
+            removeContent();
+            showContent(e.target.textContent);
+        }
     }
 }
 function highlightItem(e) {
@@ -38,4 +48,27 @@ function blurItem(e) {
             e.target.classList.remove('nav-item-active');
         }
     }
+}
+/*Dynamic content*/
+function showContent(name) {
+    let content = data.projects.filter(i => {
+        return i.name === name;
+    })[0];
+    console.log(content);
+    let fragment = document.createDocumentFragment();
+    let nameDiv = document.createElement('div');
+    nameDiv.textContent = content.name;
+    nameDiv.setAttribute('id', 'content-name');
+    fragment.appendChild(nameDiv);
+    for(let i = 0; i < content.tasks.length; i++){
+        let task = document.createElement('div');
+        task.textContent = content.tasks[i];
+        fragment.appendChild(task);
+    }
+    contentContainer.appendChild(fragment);
+}
+function removeContent() {
+        while (contentContainer.hasChildNodes()) {
+            contentContainer.removeChild(contentContainer.firstChild);
+        }
 }
