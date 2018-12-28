@@ -6,6 +6,11 @@
     padding-left: 24px;
     padding-top: 24px;
     z-index: 10;
+    left: -300px;
+    transition: left 2s;
+}
+.menu-active{
+    left: 0px;
 }
 .nav-head{
     font-size: 24px;
