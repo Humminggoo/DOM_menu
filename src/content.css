@@ -1,7 +1,10 @@
+.wrapper{
+    background-color: #1F1F1F;
+    height: 100vh;
+}
 .content-wrapper{
     padding: 48px;
     background-color: #1F1F1F;
-    height: 75vh;
 }
 .content-name{
     color: #DDDDDD;

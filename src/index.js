@@ -2,6 +2,7 @@ import  './css-reset.css';
 import './header.css';
 import  './menu.css';
 import  './content.css';
+import  './media-desktop.css';
 import * as data from './task.json';
 const word = data.projects;
 console.log(word); // output 'testing'
